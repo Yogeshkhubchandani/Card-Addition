@@ -136,7 +136,7 @@ public class Main {
 				String user_name=p.nextLine();
 				for(User i:Card.keySet())
 				{
-					if(id==i.id && user_name==i.user_name)
+					if(id==i.id)
 					{
 				
 						int z=Card.get(i).length;
@@ -168,13 +168,8 @@ public class Main {
 				String username=p.nextLine();
 				for(User i:Card.keySet())
 				{
-					System.out.println("ID:"+i.id);
-					System.out.println("Name:"+i.user_name);
-					System.out.println("ID:"+id1);
-					System.out.println("Name:"+username);
-					if(username==i.user_name && id1==i.id)
+					if(id1==i.id)
 					{
-						System.out.println("if loop");
 						card x=new card();
 						System.out.println("Enter credit card number");
 						long num=p.nextLong();
