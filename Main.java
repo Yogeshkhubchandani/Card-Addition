@@ -1,5 +1,6 @@
 package card;
 import java.util.*;
+import java.nio.charset.*;
 class User
 {
 	int id;
@@ -88,6 +89,20 @@ public class Main {
 		Scanner p=new Scanner(System.in);
 		HashMap<User,card[]> Card= new HashMap<User,card[]>();
 		int cont;
+		for(int i=0;i<3;i++)
+		{
+			User tmp=new User();
+			tmp.id=i;
+			byte[] array = new byte[7]; // length is bounded by 7
+			new Random().nextBytes(array);
+			tmp.user_name= new String(array, Charset.forName("UTF-8"));
+			
+			card[] temp=new card[1];
+			temp[0]=new card();
+			temp[0].add_card(1234567890092L*(i+1),23+(i+1),9+(i+2),2021+i);
+			Card.put(tmp,temp);
+		}
+		
 		do
 		{
 			int y=0;
